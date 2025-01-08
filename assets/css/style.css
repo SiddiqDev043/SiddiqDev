@@ -2,19 +2,6 @@
   #style.css
 \*-----------------------------------*/
 
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
 
   /**
@@ -291,6 +278,7 @@ article.active {
   border-radius: inherit;
   z-index: -1;
 }
+
 
 
 
@@ -834,7 +822,10 @@ main {
  * skills 
  */
 
-.skills-title { margin-bottom: 20px; }
+.skills-title { 
+  margin-bottom: 20px;
+  
+}
 
 .skills-list { padding: 20px; }
 
@@ -846,6 +837,11 @@ main {
   align-items: center;
   gap: 5px;
   margin-bottom: 8px;
+  margin: 20px 0;
+}
+
+.skill .title-wrapper .bx{
+  font-size: 30px;
 }
 
 .skill .title-wrapper data {
