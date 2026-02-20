@@ -160,7 +160,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // add contact api whatsapp
 function sendToWhatsapp() {
-  let Number = "+6283869522271";
+
+  let Number = "+6281234608882";
 
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;

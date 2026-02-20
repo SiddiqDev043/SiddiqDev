@@ -715,7 +715,11 @@ main {
  */
 
 .clients { margin-bottom: 15px; }
+<<<<<<< HEAD
 
+=======
+/**
+>>>>>>> a92bf1c (update porto)
 .clients-list {
   display: flex;
   justify-content: flex-start;
@@ -743,7 +747,11 @@ main {
 }
 
 .clients-item img:hover { filter: grayscale(0); }
+<<<<<<< HEAD
 
+=======
+**/
+>>>>>>> a92bf1c (update porto)
 
 
 
