@@ -1013,6 +1013,12 @@ main {
 
 .project-item > a:hover img { transform: scale(1.1); }
 
+.bonus {
+  font-size: 11px;
+  color: var(--light-gray-70);
+  font-weight: var(--fw-300);
+}
+
 .project-title,
 .project-category { margin-left: 10px; }
 
