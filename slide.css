@@ -1,21 +1,22 @@
 #image-track {
   position: relative;
   width: 80%;
-  height: 400px;        
-  overflow: hidden;    
+  height: 400px;
   margin-top: 16px;
+  overflow: hidden;
 }
 
 .image {
-  width: 80%;
-  height: 80%;
-  background-size: cover;
-  background-position: center top; 
-  transition: transform 0.6s ease, opacity 0.6s ease;
   position: absolute;
   inset: 0;
+  
+  background-size: cover;
+  background-position: center top;
+
   transform: translateX(100%);
   opacity: 0;
+
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 .image:hover {
@@ -23,19 +24,24 @@
 }
 
 .image .description {
-  opacity: 0;
-  background: rgba(0,0,0,0.65);
-  padding: 10px;
-  text-align: center;
-  color: #eee;
-  transition: .4s;
   position: absolute;
   bottom: 0;
+  left: 0;                 
   width: 100%;
+  padding: 6px 0;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: #eee;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
 }
 
 .image:hover .description {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .image.active {
@@ -53,14 +59,63 @@
 @media (max-width: 768px) {
 
   #image-track {
-    width: 100%;        
-    height: 400px;      
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;   /* ubah kalau rasio gambar beda */
+    overflow: hidden;
   }
 
   .image {
-    width: 100%;        
-    height: 100%;       
-    background-position: center center; 
+    position: absolute;   /* tetap absolute supaya animasi jalan */
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateX(100%);
+    opacity: 0;
+
+    transition: transform 0.6s ease, opacity 0.6s ease;
+
+    background: none;     /* matikan background desktop */
+  }
+
+  /* Pakai IMG untuk mobile */
+  .image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* tidak kepotong */
+  }
+
+  /* Description tetap overlay */
+  .image .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 6px 0;
+
+    background: rgba(0,0,0,0.65);
+    color: #eee;
+    text-align: center;
+
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Active state tetap jalan */
+  .image.active {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .image.prev {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
   }
 
 }
